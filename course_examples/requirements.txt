@@ -1,0 +1,6 @@
+opencv-python
+ultralytics
+roboflow
+python-dotenv
+pyyaml
+
