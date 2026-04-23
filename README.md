@@ -15,7 +15,7 @@
 เปิด PowerShell ที่โฟลเดอร์โปรเจกต์นี้:
 
 ```powershell
-cd G:\intern-practice\Assign\reserchAI
+cd --โฟลเดอร์งาน
 ```
 
 สร้าง virtual environment:
