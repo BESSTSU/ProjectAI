@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import time
@@ -6,14 +6,11 @@ from pathlib import Path
 
 import cv2
 
-from common import DEFAULT_RUNS_DIR, first_existing_path
+from common import find_best_trained_weights
 
 
 def default_model_path() -> Path | None:
-    return first_existing_path(
-        DEFAULT_RUNS_DIR / "train23" / "weights" / "best.pt",
-        DEFAULT_RUNS_DIR / "train24" / "weights" / "best.pt",
-    )
+    return find_best_trained_weights()
 
 
 def parse_args() -> argparse.Namespace:
@@ -86,4 +83,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

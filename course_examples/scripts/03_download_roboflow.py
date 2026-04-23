@@ -7,11 +7,17 @@ from common import MODEL_DIR, get_env
 
 
 def parse_args() -> argparse.Namespace:
+
+    workspace = get_env("ROBOFLOW_WORKSPACE")
+    project = get_env("ROBOFLOW_PROJECT")
+    dataset_version = get_env("ROBOFLOW_DATASET_VERSION")
+    dataset_format = get_env("ROBOFLOW_DATASET_FORMAT")
+
     parser = argparse.ArgumentParser(description="Download YOLO dataset from Roboflow.")
-    parser.add_argument("--workspace", default="woodenboxdetector", help="Roboflow workspace name.")
-    parser.add_argument("--project", default="woodenbox", help="Roboflow project name.")
-    parser.add_argument("--version", type=int, default=13, help="Dataset version.")
-    parser.add_argument("--format", default="yolov11", help="Download format.")
+    parser.add_argument("--workspace", default=workspace, help="Roboflow workspace name.")
+    parser.add_argument("--project", default=project, help="Roboflow project name.")
+    parser.add_argument("--version", type=int, default=dataset_version, help="Dataset version.")
+    parser.add_argument("--format", default=dataset_format, help="Download format.")
     parser.add_argument(
         "--output-dir",
         type=Path,
